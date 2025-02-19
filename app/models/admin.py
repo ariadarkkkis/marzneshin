@@ -20,7 +20,13 @@ class Admin(BaseModel):
     is_sudo: bool
     enabled: bool = True
     all_services_access: bool = False
-    modify_users_access: bool = True
+    add_users_access: bool = True
+    edit_users_access: bool = False
+    delete_users_access: bool = True
+    delete_expired_users_access: bool = True
+    reset_users_usage_access: bool = False
+    toggle_users_status_access: bool = True
+    revoke_users_sub_access: bool = True
     service_ids: list = []
     subscription_url_prefix: str = ""
     model_config = ConfigDict(from_attributes=True)
@@ -63,7 +69,13 @@ class AdminPartialModify(AdminModify):
     is_sudo: bool | None = None
     enabled: bool | None = None
     all_services_access: bool | None = None
-    modify_users_access: bool | None = None
+    add_users_access: bool | None = None
+    edit_users_access: bool | None = None
+    delete_users_access: bool | None = None
+    delete_expired_users_access: bool | None = None
+    reset_users_usage_access: bool | None = None
+    toggle_users_status_access: bool | None = None
+    revoke_users_sub_access: bool | None = None
     service_ids: list | None = None
     subscription_url_prefix: str | None = None
 

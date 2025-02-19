@@ -90,10 +90,52 @@ def get_user(
     return db_user
 
 
-def user_modification_access(
+def add_users_access(
     admin: Annotated[Admin, Depends(get_current_admin)]
 ):
-    if not admin.is_sudo and not admin.modify_users_access:
+    if not admin.is_sudo and not admin.add_users_access:
+        raise HTTPException(status_code=403, detail="You're not allowed")
+
+
+def edit_users_access(
+    admin: Annotated[Admin, Depends(get_current_admin)]
+):
+    if not admin.is_sudo and not admin.edit_users_access:
+        raise HTTPException(status_code=403, detail="You're not allowed")
+
+
+def delete_users_access(
+    admin: Annotated[Admin, Depends(get_current_admin)]
+):
+    if not admin.is_sudo and not admin.delete_users_access:
+        raise HTTPException(status_code=403, detail="You're not allowed")
+
+
+def delete_expired_users_access(
+    admin: Annotated[Admin, Depends(get_current_admin)]
+):
+    if not admin.is_sudo and not admin.delete_expired_users_access:
+        raise HTTPException(status_code=403, detail="You're not allowed")
+
+
+def reset_users_usage_access(
+    admin: Annotated[Admin, Depends(get_current_admin)]
+):
+    if not admin.is_sudo and not admin.reset_users_usage_access:
+        raise HTTPException(status_code=403, detail="You're not allowed")
+
+
+def toggle_users_status_access(
+    admin: Annotated[Admin, Depends(get_current_admin)]
+):
+    if not admin.is_sudo and not admin.toggle_users_status_access:
+        raise HTTPException(status_code=403, detail="You're not allowed")
+
+
+def revoke_users_sub_access(
+    admin: Annotated[Admin, Depends(get_current_admin)]
+):
+    if not admin.is_sudo and not admin.revoke_users_sub_access:
         raise HTTPException(status_code=403, detail="You're not allowed")
 
 
@@ -127,5 +169,11 @@ SudoAdminDep = Annotated[Admin, Depends(sudo_admin)]
 DBDep = Annotated[Session, Depends(get_db)]
 StartDateDep = Annotated[datetime, Depends(parse_start_date)]
 EndDateDep = Annotated[datetime, Depends(parse_end_date)]
-ModifyUsersAccess = Annotated[None, Depends(user_modification_access)]
+AddUsersAccess = Annotated[None, Depends(add_users_access)]
+EditUsersAccess = Annotated[None, Depends(edit_users_access)]
+DeleteUsersAccess = Annotated[None, Depends(delete_users_access)]
+DeleteExpiredUsersAccess = Annotated[None, Depends(delete_expired_users_access)]
+ResetUsersUsageAccess = Annotated[None, Depends(reset_users_usage_access)]
+ToggleUsersStatusAccess = Annotated[None, Depends(toggle_users_status_access)]
+RevokeUsersSubAccess = Annotated[None, Depends(revoke_users_sub_access)]
 ServiceDep = Annotated[Service, Depends(get_service)]

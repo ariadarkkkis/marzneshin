@@ -94,7 +94,43 @@ class Admin(Base):
         default=False,
         server_default=sqlalchemy.sql.false(),
     )
-    modify_users_access = Column(
+    add_users_access = Column(
+        Boolean,
+        nullable=False,
+        default=True,
+        server_default=sqlalchemy.sql.true(),
+    )
+    edit_users_access = Column(
+        Boolean,
+        nullable=False,
+        default=False,
+        server_default=sqlalchemy.sql.false(),
+    )
+    delete_users_access = Column(
+        Boolean,
+        nullable=False,
+        default=True,
+        server_default=sqlalchemy.sql.true(),
+    )
+    delete_expired_users_access = Column(
+        Boolean,
+        nullable=False,
+        default=True,
+        server_default=sqlalchemy.sql.true(),
+    )
+    reset_users_usage_access = Column(
+        Boolean,
+        nullable=False,
+        default=False,
+        server_default=sqlalchemy.sql.false(),
+    )
+    toggle_users_status_access = Column(
+        Boolean,
+        nullable=False,
+        default=True,
+        server_default=sqlalchemy.sql.true(),
+    )
+    revoke_users_sub_access = Column(
         Boolean,
         nullable=False,
         default=True,

@@ -22,7 +22,13 @@ import { UsernameField } from "@marzneshin/modules/users";
 import {
     PasswordField,
     EnabledField,
-    ModifyUsersAccessField,
+    AddUsersAccessField,
+    EditUsersAccessField,
+    DeleteUsersAccessField,
+    DeleteExpiredUsersAccessField,
+    ResetUsersUsageAccessField,
+    ToggleUsersStatusAccessField,
+    RevokeUsersSubAccessField,
     SubscriptionUrlPrefixField,
     SudoPrivilageField,
     AllServicesAccessField,
@@ -40,7 +46,13 @@ export const AdminsMutationDialog: FC<MutationDialogProps<AdminType>> = ({
         username: "",
         is_sudo: false,
         enabled: true,
-        modify_users_access: true,
+        add_users_access: true,
+        edit_users_access: false,
+        delete_users_access: true,
+        delete_expired_users_access: true,
+        reset_users_usage_access: false,
+        toggle_users_status_access: true,
+        revoke_users_sub_access: true,
     }), [])
 
     const { onOpenChange, open, form, handleSubmit } = useMutationDialog({
@@ -77,7 +89,13 @@ export const AdminsMutationDialog: FC<MutationDialogProps<AdminType>> = ({
                                     <PasswordField change={change} handleChange={setChange} />
                                     <SubscriptionUrlPrefixField />
                                     <EnabledField />
-                                    <ModifyUsersAccessField />
+                                    <AddUsersAccessField />
+                                    <EditUsersAccessField />
+                                    <DeleteUsersAccessField />
+                                    <DeleteExpiredUsersAccessField />
+                                    <ResetUsersUsageAccessField />
+                                    <ToggleUsersStatusAccessField />
+                                    <RevokeUsersSubAccessField />
                                     <SudoPrivilageField />
                                     <AllServicesAccessField />
                                 </div>

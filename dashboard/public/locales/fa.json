@@ -257,7 +257,13 @@
           "title": "حذف ادمین"
         }
       },
-      "modify-users-access": "تغییر دسترسی کاربران",
+      "add-users-access": "دسترسی افزودن کاربر",
+      "edit-users-access": "دسترسی ویرایش کاربر",
+      "delete-users-access": "دسترسی حذف کاربر",
+      "delete-expired-users-access": "دسترسی حذف اشتراک",
+      "reset-users-usage-access": "دسترسی ریست ترافیک کاربر",
+      "toggle-users-status-access": "دسترسی تغییر وضعیت کاربر",
+      "revoke-users-sub-access": "دسترسی ابطال لینک اشتراک",
       "subscription-url-prefix": "پیشوند URL اشتراک",
       "sudo-privilage": "دسترسی سوپر ادمین",
       "all-services-access": "دسترسی به کلیه سرویس ها",

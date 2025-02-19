@@ -251,17 +251,23 @@
       "enable_users": "Включить пользователей",
       "permission": "Разрешение",
       "dialogs": {
-	"creation": {
-	"title": "Создать администратора"
-	},
-	"edition": {
-	"title": "Редактировать администратора"
-	},
-	"deletion": {
-	"title": "Удалить администратора"
-	}
+        "creation": {
+          "title": "Создать администратора"
+        },
+        "edition": {
+          "title": "Редактировать администратора"
+        },
+        "deletion": {
+          "title": "Удалить администратора"
+        }
       },
-      "modify-users-access": "Изменить доступ пользователей",
+      "add-users-access": "Доступ к добавлению пользователей",
+      "edit-users-access": "Доступ к редактированию пользователей",
+      "delete-users-access": "Доступ к удалению пользователей",
+      "delete-expired-users-access": "Доступ к удалению просроченных пользователей",
+      "reset-users-usage-access": "Доступ к сбросу использования пользователей",
+      "toggle-users-status-access": "Доступ к изменению статуса пользователей",
+      "revoke-users-sub-access": "Доступ к отзыву подписок пользователей",
       "subscription-url-prefix": "Префикс URL подписки",
       "sudo-privilage": "Привилегии sudo",
       "all-services-access": "Доступ ко всем сервисам",

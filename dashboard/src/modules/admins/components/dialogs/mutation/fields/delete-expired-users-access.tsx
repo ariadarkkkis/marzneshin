@@ -8,13 +8,13 @@ import {
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ModifyUsersAccessField = () => {
+export const DeleteExpiredUsersAccessField = () => {
     const { t } = useTranslation()
     const form = useFormContext();
     return (
         <FormField
             control={form.control}
-            name="modify_users_access"
+            name="delete_expired_users_access"
             render={({ field }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md">
                     <FormControl>
@@ -25,7 +25,7 @@ export const ModifyUsersAccessField = () => {
                     </FormControl>
                     <div className="space-y-1 leading-none">
                         <FormLabel>
-                            {t("page.admins.modify-users-access")}
+                            {t("page.admins.delete-expired-users-access")}
                         </FormLabel>
                     </div>
                 </FormItem>

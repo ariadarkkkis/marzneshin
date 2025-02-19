@@ -782,7 +782,13 @@ def create_admin(db: Session, admin: AdminCreate):
         is_sudo=admin.is_sudo,
         enabled=admin.enabled,
         all_services_access=admin.all_services_access,
-        modify_users_access=admin.modify_users_access,
+        add_users_access=admin.add_users_access,
+        edit_users_access=admin.edit_users_access,
+        delete_users_access=admin.delete_users_access,
+        delete_expired_users_access=admin.delete_expired_users_access,
+        reset_users_usage_access=admin.reset_users_usage_access,
+        toggle_users_status_access=admin.toggle_users_status_access,
+        revoke_users_sub_access=admin.revoke_users_sub_access,
         services=db.query(Service)
         .filter(Service.id.in_(admin.service_ids))
         .all(),
@@ -802,7 +808,13 @@ def update_admin(
         "hashed_password",
         "enabled",
         "all_services_access",
-        "modify_users_access",
+        "add_users_access",
+        "edit_users_access",
+        "delete_users_access",
+        "delete_expired_users_access",
+        "reset_users_usage_access",
+        "toggle_users_status_access",
+        "revoke_users_sub_access",
         "subscription_url_prefix",
     ]:
         if not isinstance(getattr(modifications, attribute), NoneType):

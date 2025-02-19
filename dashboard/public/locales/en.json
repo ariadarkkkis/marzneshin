@@ -261,7 +261,13 @@
           "title": "Delete admin"
         }
       },
-      "modify-users-access": "Modify users access",
+      "add-users-access": "Add users access",
+      "edit-users-access": "Edit users access",
+      "delete-users-access": "Delete users access",
+      "delete-expired-users-access": "Delete expired users access",
+      "reset-users-usage-access": "Reset users usage access",
+      "toggle-users-status-access": "Toggle users status access",
+      "revoke-users-sub-access": "Revoke users subscription access",
       "subscription-url-prefix": "Subscription URL prefix",
       "sudo-privilage": "Sudo privilage",
       "all-services-access": "All services access",
