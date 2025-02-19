@@ -90,23 +90,17 @@ def get_user(
     return db_user
 
 
-def add_users_access(
-    admin: Annotated[Admin, Depends(get_current_admin)]
-):
+def add_users_access(admin: Annotated[Admin, Depends(get_current_admin)]):
     if not admin.is_sudo and not admin.add_users_access:
         raise HTTPException(status_code=403, detail="You're not allowed")
 
 
-def edit_users_access(
-    admin: Annotated[Admin, Depends(get_current_admin)]
-):
+def edit_users_access(admin: Annotated[Admin, Depends(get_current_admin)]):
     if not admin.is_sudo and not admin.edit_users_access:
         raise HTTPException(status_code=403, detail="You're not allowed")
 
 
-def delete_users_access(
-    admin: Annotated[Admin, Depends(get_current_admin)]
-):
+def delete_users_access(admin: Annotated[Admin, Depends(get_current_admin)]):
     if not admin.is_sudo and not admin.delete_users_access:
         raise HTTPException(status_code=403, detail="You're not allowed")
 
@@ -172,7 +166,9 @@ EndDateDep = Annotated[datetime, Depends(parse_end_date)]
 AddUsersAccess = Annotated[None, Depends(add_users_access)]
 EditUsersAccess = Annotated[None, Depends(edit_users_access)]
 DeleteUsersAccess = Annotated[None, Depends(delete_users_access)]
-DeleteExpiredUsersAccess = Annotated[None, Depends(delete_expired_users_access)]
+DeleteExpiredUsersAccess = Annotated[
+    None, Depends(delete_expired_users_access)
+]
 ResetUsersUsageAccess = Annotated[None, Depends(reset_users_usage_access)]
 ToggleUsersStatusAccess = Annotated[None, Depends(toggle_users_status_access)]
 RevokeUsersSubAccess = Annotated[None, Depends(revoke_users_sub_access)]

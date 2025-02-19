@@ -117,10 +117,10 @@ def get_users(
 
 @router.post("", response_model=UserResponse)
 async def add_user(
-    new_user: UserCreate, 
-    db: DBDep, 
+    new_user: UserCreate,
+    db: DBDep,
     admin: AdminDep,
-    add_access: AddUsersAccess
+    add_access: AddUsersAccess,
 ):
     """
     Add a new user
@@ -298,7 +298,7 @@ async def remove_user(
     db_user: UserDep,
     db: DBDep,
     admin: AdminDep,
-    delete_access: DeleteUsersAccess
+    delete_access: DeleteUsersAccess,
 ):
     """
     Remove a user
